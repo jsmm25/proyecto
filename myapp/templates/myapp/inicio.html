@@ -1,0 +1,56 @@
+<!-- myapp/templates/myapp/inicio.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Inicio</title>
+    {% load static %}
+    <style>
+        body {
+            background-image: url('{% static "images/HRiplF.jpg" %}');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: white;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        header {
+            text-align: center;
+            padding: 20px;
+        }
+        .button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px 30px;
+            font-size: 18px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            margin: 5px;
+            text-decoration: none;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Bienvenido a la Página de Inicio</h1>
+    </header>
+    <div class="button-container">
+        <a href="{% url 'lista_clientes' %}" class="button">Ver Clientes</a>
+        <a href="{% url 'lista_reservas' %}" class="button">Ver Reservas</a>
+        <a href="{% url 'registro' %}" class="button">Hacer Reservación</a>
+    </div>
+</body>
+</html>

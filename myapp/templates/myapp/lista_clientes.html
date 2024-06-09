@@ -1,0 +1,64 @@
+<!-- myapp/templates/myapp/lista_clientes.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Clientes</title>
+    {% load static %}
+    <style>
+        body {
+            background-image: url('{% static "images/HRiplF.jpg" %}');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-color: #f2f2f2;
+            color: #333;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        table {
+            width: 80%;
+            border-collapse: collapse;
+            margin: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h2>Lista de Clientes</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Correo Electrónico</th>
+                <!-- Otros encabezados de columnas según tu modelo Cliente -->
+            </tr>
+        </thead>
+        <tbody>
+            {% for cliente in clientes %}
+                <tr>
+                    <td>{{ cliente.id }}</td>
+                    <td>{{ cliente.nombre }}</td>
+                    <td>{{ cliente.correo }}</td>
+                    <!-- Otros campos de cliente según tu modelo Cliente -->
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
